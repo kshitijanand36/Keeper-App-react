@@ -6,17 +6,7 @@ import Footer from "./Footer";
 import Note from "./Note";
 import notes from "../notes";
 
-function create(props){
 
-    return (
-        <Note
-            key = {props.key} 
-            title = {props.title}
-            content = {props.content}
-
-          />  
-    )
-}
 
 
 function App(){
@@ -26,7 +16,13 @@ function App(){
     return (
         <div>
             <Header />
-            {notes.map(create)}
+            {notes.map( props=>
+            <Note
+                key = {props.key} 
+                title = {props.title}
+                content = {props.content}
+            />  
+             )}
             <Footer />
 
         </div>
